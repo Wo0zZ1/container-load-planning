@@ -6,3 +6,6 @@ __pycache__/
 out/
 target/
 bin/
+
+.vscode/
+Thumbs.db
