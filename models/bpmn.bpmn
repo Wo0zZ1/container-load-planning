@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" id="definitions_2c62a483-73e9-430d-9538-435b45d177ad" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_id_5ed6da90f3a7" processType="None" isClosed="false" isExecutable="false">
+    <laneSet id="LaneSet_id_ecf3d29f9a16">
+      <lane id="Lane_id_607abbf26c85" name="Организатор поезда">
+        <flowNodeRef>StartEvent_id_57ca01cc5a6a</flowNodeRef>
+        <flowNodeRef>ParallelGateway_id_2d61c59fd7be</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_id_784c2aaf7788</flowNodeRef>
+        <flowNodeRef>UserTask_id_1589f8beef8d</flowNodeRef>
+        <flowNodeRef>UserTask_id_5b58f6c84caf</flowNodeRef>
+        <flowNodeRef>UserTask_id_a769030b7cd5</flowNodeRef>
+      </lane>
+      <lane id="Lane_id_f9ea559f01f1" name="Перевозчик">
+        <flowNodeRef>UserTask_id_e933ec28ede4</flowNodeRef>
+      </lane>
+      <lane id="Lane_id_f642cec8a05e" name="Приемосдатчик">
+        <flowNodeRef>UserTask_id_1a225f3497d6</flowNodeRef>
+        <flowNodeRef>UserTask_id_7d75dfeee178</flowNodeRef>
+      </lane>
+      <lane id="Lane_id_2d4021af5e3f" name="Диспетчер терминала">
+        <flowNodeRef>UserTask_id_2c1af34d7c87</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_id_2b7248278b7f</flowNodeRef>
+        <flowNodeRef>ParallelGateway_id_0794612d9d20</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_id_b4dbc380550d</flowNodeRef>
+        <flowNodeRef>UserTask_id_c02765dc83bb</flowNodeRef>
+        <flowNodeRef>UserTask_id_3aaf3baba76c</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_id_2007af0cabfc</flowNodeRef>
+        <flowNodeRef>UserTask_id_b187ba0e3439</flowNodeRef>
+        <flowNodeRef>UserTask_id_a02146fac1bf</flowNodeRef>
+        <flowNodeRef>ParallelGateway_id_01a073f38999</flowNodeRef>
+        <flowNodeRef>ParallelGateway_id_b7a1454285f3</flowNodeRef>
+        <flowNodeRef>EndEvent_id_94338e0a103f</flowNodeRef>
+      </lane>
+      <lane id="Lane_id_b1051a810dd5" name="Крановщик">
+        <flowNodeRef>UserTask_id_f8820fdb8aaa</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="StartEvent_id_57ca01cc5a6a" name="Заявка ГУ-12 согласована">
+      <outgoing>Flow_id_98c62fe4ee3c</outgoing>
+    </startEvent>
+    <parallelGateway id="ParallelGateway_id_2d61c59fd7be" name="">
+      <incoming>Flow_id_98c62fe4ee3c</incoming>
+      <outgoing>Flow_id_1718cecb913a</outgoing>
+      <outgoing>Flow_id_80ec2e89f869</outgoing>
+    </parallelGateway>
+    <exclusiveGateway id="ExclusiveGateway_id_784c2aaf7788" name="">
+      <incoming>Flow_id_1718cecb913a</incoming>
+      <incoming>Flow_id_b1a116e77bee</incoming>
+      <outgoing>Flow_id_af73197f3c7c</outgoing>
+    </exclusiveGateway>
+    <userTask id="UserTask_id_1589f8beef8d" name="Передать список контейнеров" implementation="##unspecified">
+      <incoming>Flow_id_af73197f3c7c</incoming>
+      <outgoing>Flow_id_d2d6db5da784</outgoing>
+      <property id="Property_1uku1q2" name="__targetRef_placeholder" />
+      <dataInputAssociation id="DataInputAssociation_0mnbd5f">
+        <sourceRef>DataObjectReference_0925h15</sourceRef>
+        <targetRef>Property_1uku1q2</targetRef>
+      </dataInputAssociation>
+      <dataOutputAssociation id="DataOutputAssociation_0gptw98">
+        <targetRef>DataObjectReference_0alad7y</targetRef>
+      </dataOutputAssociation>
+    </userTask>
+    <userTask id="UserTask_id_2c1af34d7c87" name="Проверить данные контейнеров" implementation="##unspecified">
+      <incoming>Flow_id_d2d6db5da784</incoming>
+      <outgoing>Flow_id_e585f8c387b3</outgoing>
+      <property id="Property_00283tw" name="__targetRef_placeholder" />
+      <dataInputAssociation id="DataInputAssociation_0owgagc">
+        <sourceRef>DataObjectReference_0alad7y</sourceRef>
+        <targetRef>Property_00283tw</targetRef>
+      </dataInputAssociation>
+    </userTask>
+    <exclusiveGateway id="ExclusiveGateway_id_2b7248278b7f" name="Данные полные?" default="Flow_id_d8b941db4f27">
+      <incoming>Flow_id_e585f8c387b3</incoming>
+      <outgoing>Flow_id_8878f27b3758</outgoing>
+      <outgoing>Flow_id_d8b941db4f27</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_id_0794612d9d20" name="">
+      <incoming>Flow_id_d8b941db4f27</incoming>
+      <incoming>Flow_id_4cc0db14eabf</incoming>
+      <outgoing>Flow_id_87e334de0d8d</outgoing>
+    </parallelGateway>
+    <userTask id="UserTask_id_e933ec28ede4" name="Подать платформы и задать длину поезда" implementation="##unspecified">
+      <incoming>Flow_id_80ec2e89f869</incoming>
+      <outgoing>Flow_id_c37991e90f8f</outgoing>
+    </userTask>
+    <exclusiveGateway id="ExclusiveGateway_id_b4dbc380550d" name="">
+      <incoming>Flow_id_87e334de0d8d</incoming>
+      <incoming>Flow_id_3cb49d7ce150</incoming>
+      <outgoing>Flow_id_b085047782f1</outgoing>
+    </exclusiveGateway>
+    <userTask id="UserTask_id_c02765dc83bb" name="Распределить контейнеры по платформам" implementation="##unspecified">
+      <incoming>Flow_id_b085047782f1</incoming>
+      <outgoing>Flow_id_309c12e95d0d</outgoing>
+      <property id="Property_18naser" name="__targetRef_placeholder" />
+      <dataInputAssociation id="DataInputAssociation_1cu6obd">
+        <sourceRef>DataObjectReference_0oghxup</sourceRef>
+        <targetRef>Property_18naser</targetRef>
+      </dataInputAssociation>
+      <dataOutputAssociation id="DataOutputAssociation_0s7m7zv">
+        <targetRef>DataObjectReference_1yrwkmq</targetRef>
+      </dataOutputAssociation>
+    </userTask>
+    <userTask id="UserTask_id_3aaf3baba76c" name="Рассчитать заполнение поезда в ДФЭ" implementation="##unspecified">
+      <incoming>Flow_id_309c12e95d0d</incoming>
+      <outgoing>Flow_id_c55c11e282d7</outgoing>
+      <property id="Property_1496tgc" name="__targetRef_placeholder" />
+      <dataInputAssociation id="DataInputAssociation_0zc1tbn">
+        <sourceRef>DataObjectReference_1yrwkmq</sourceRef>
+        <targetRef>Property_1496tgc</targetRef>
+      </dataInputAssociation>
+    </userTask>
+    <exclusiveGateway id="ExclusiveGateway_id_2007af0cabfc" name="Норма 92% выполнена?" default="Flow_id_9e78479b378d">
+      <incoming>Flow_id_c55c11e282d7</incoming>
+      <outgoing>Flow_id_3cb49d7ce150</outgoing>
+      <outgoing>Flow_id_9e78479b378d</outgoing>
+    </exclusiveGateway>
+    <userTask id="UserTask_id_b187ba0e3439" name="Определить платформы для перестановки упоров" implementation="##unspecified">
+      <incoming>Flow_id_9e78479b378d</incoming>
+      <outgoing>Flow_id_68f794dcc23c</outgoing>
+      <dataOutputAssociation id="DataOutputAssociation_1ojhbj5">
+        <targetRef>DataObjectReference_16y02ka</targetRef>
+      </dataOutputAssociation>
+    </userTask>
+    <userTask id="UserTask_id_a02146fac1bf" name="Выдать план погрузки и задания" implementation="##unspecified">
+      <incoming>Flow_id_68f794dcc23c</incoming>
+      <outgoing>Flow_id_6bea7733f47f</outgoing>
+      <dataOutputAssociation id="DataOutputAssociation_0rz5k2e">
+        <targetRef>DataObjectReference_0gn19vb</targetRef>
+      </dataOutputAssociation>
+    </userTask>
+    <parallelGateway id="ParallelGateway_id_01a073f38999" name="">
+      <incoming>Flow_id_6bea7733f47f</incoming>
+      <outgoing>Flow_id_27b136e00a41</outgoing>
+      <outgoing>Flow_id_2b27c09ff6b4</outgoing>
+      <outgoing>Flow_id_2e71c79a067f</outgoing>
+    </parallelGateway>
+    <userTask id="UserTask_id_5b58f6c84caf" name="Принять список невошедших контейнеров" implementation="##unspecified">
+      <incoming>Flow_id_27b136e00a41</incoming>
+      <outgoing>Flow_id_22e8a872ef40</outgoing>
+      <property id="Property_09gdwu2" name="__targetRef_placeholder" />
+      <dataInputAssociation id="DataInputAssociation_0fo8wav">
+        <sourceRef>DataObjectReference_0gn19vb</sourceRef>
+        <targetRef>Property_09gdwu2</targetRef>
+      </dataInputAssociation>
+    </userTask>
+    <userTask id="UserTask_id_f8820fdb8aaa" name="Принять план погрузки" implementation="##unspecified">
+      <incoming>Flow_id_2e71c79a067f</incoming>
+      <outgoing>Flow_id_ae08245bc5dd</outgoing>
+    </userTask>
+    <parallelGateway id="ParallelGateway_id_b7a1454285f3" name="">
+      <incoming>Flow_id_22e8a872ef40</incoming>
+      <incoming>Flow_id_9449c5741f9b</incoming>
+      <incoming>Flow_id_ae08245bc5dd</incoming>
+      <outgoing>Flow_id_3efc9d513051</outgoing>
+    </parallelGateway>
+    <endEvent id="EndEvent_id_94338e0a103f" name="План погрузки передан исполнителям">
+      <incoming>Flow_id_3efc9d513051</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_id_98c62fe4ee3c" name="" sourceRef="StartEvent_id_57ca01cc5a6a" targetRef="ParallelGateway_id_2d61c59fd7be" />
+    <sequenceFlow id="Flow_id_1718cecb913a" name="" sourceRef="ParallelGateway_id_2d61c59fd7be" targetRef="ExclusiveGateway_id_784c2aaf7788" />
+    <sequenceFlow id="Flow_id_af73197f3c7c" name="" sourceRef="ExclusiveGateway_id_784c2aaf7788" targetRef="UserTask_id_1589f8beef8d" />
+    <sequenceFlow id="Flow_id_d2d6db5da784" name="" sourceRef="UserTask_id_1589f8beef8d" targetRef="UserTask_id_2c1af34d7c87" />
+    <sequenceFlow id="Flow_id_e585f8c387b3" name="" sourceRef="UserTask_id_2c1af34d7c87" targetRef="ExclusiveGateway_id_2b7248278b7f" />
+    <sequenceFlow id="Flow_id_8878f27b3758" name="Нет" sourceRef="ExclusiveGateway_id_2b7248278b7f" targetRef="UserTask_id_a769030b7cd5" />
+    <sequenceFlow id="Flow_id_b1a116e77bee" name="" sourceRef="UserTask_id_a769030b7cd5" targetRef="ExclusiveGateway_id_784c2aaf7788" />
+    <sequenceFlow id="Flow_id_d8b941db4f27" name="Да" sourceRef="ExclusiveGateway_id_2b7248278b7f" targetRef="ParallelGateway_id_0794612d9d20" />
+    <sequenceFlow id="Flow_id_80ec2e89f869" name="" sourceRef="ParallelGateway_id_2d61c59fd7be" targetRef="UserTask_id_e933ec28ede4" />
+    <sequenceFlow id="Flow_id_c37991e90f8f" name="" sourceRef="UserTask_id_e933ec28ede4" targetRef="UserTask_id_7d75dfeee178" />
+    <sequenceFlow id="Flow_id_4cc0db14eabf" name="" sourceRef="UserTask_id_7d75dfeee178" targetRef="ParallelGateway_id_0794612d9d20" />
+    <sequenceFlow id="Flow_id_87e334de0d8d" name="" sourceRef="ParallelGateway_id_0794612d9d20" targetRef="ExclusiveGateway_id_b4dbc380550d" />
+    <sequenceFlow id="Flow_id_b085047782f1" name="" sourceRef="ExclusiveGateway_id_b4dbc380550d" targetRef="UserTask_id_c02765dc83bb" />
+    <sequenceFlow id="Flow_id_309c12e95d0d" name="" sourceRef="UserTask_id_c02765dc83bb" targetRef="UserTask_id_3aaf3baba76c" />
+    <sequenceFlow id="Flow_id_c55c11e282d7" name="" sourceRef="UserTask_id_3aaf3baba76c" targetRef="ExclusiveGateway_id_2007af0cabfc" />
+    <sequenceFlow id="Flow_id_3cb49d7ce150" name="Нет" sourceRef="ExclusiveGateway_id_2007af0cabfc" targetRef="ExclusiveGateway_id_b4dbc380550d" />
+    <sequenceFlow id="Flow_id_9e78479b378d" name="Да" sourceRef="ExclusiveGateway_id_2007af0cabfc" targetRef="UserTask_id_b187ba0e3439" />
+    <sequenceFlow id="Flow_id_68f794dcc23c" name="" sourceRef="UserTask_id_b187ba0e3439" targetRef="UserTask_id_a02146fac1bf" />
+    <sequenceFlow id="Flow_id_6bea7733f47f" name="" sourceRef="UserTask_id_a02146fac1bf" targetRef="ParallelGateway_id_01a073f38999" />
+    <sequenceFlow id="Flow_id_27b136e00a41" name="" sourceRef="ParallelGateway_id_01a073f38999" targetRef="UserTask_id_5b58f6c84caf" />
+    <sequenceFlow id="Flow_id_2b27c09ff6b4" name="" sourceRef="ParallelGateway_id_01a073f38999" targetRef="UserTask_id_1a225f3497d6" />
+    <sequenceFlow id="Flow_id_2e71c79a067f" name="" sourceRef="ParallelGateway_id_01a073f38999" targetRef="UserTask_id_f8820fdb8aaa" />
+    <sequenceFlow id="Flow_id_22e8a872ef40" name="" sourceRef="UserTask_id_5b58f6c84caf" targetRef="ParallelGateway_id_b7a1454285f3" />
+    <sequenceFlow id="Flow_id_9449c5741f9b" name="" sourceRef="UserTask_id_1a225f3497d6" targetRef="ParallelGateway_id_b7a1454285f3" />
+    <sequenceFlow id="Flow_id_ae08245bc5dd" name="" sourceRef="UserTask_id_f8820fdb8aaa" targetRef="ParallelGateway_id_b7a1454285f3" />
+    <sequenceFlow id="Flow_id_3efc9d513051" name="" sourceRef="ParallelGateway_id_b7a1454285f3" targetRef="EndEvent_id_94338e0a103f" />
+    <dataObjectReference id="DataObjectReference_16y02ka" name="Задания на перестановку упоров" dataObjectRef="DataObject_079c02p" />
+    <dataObject id="DataObject_079c02p" />
+    <dataObjectReference id="DataObjectReference_0gn19vb" name="Список невошедших контейнеров" dataObjectRef="DataObject_0w9zlxj" />
+    <dataObject id="DataObject_0w9zlxj" />
+    <dataObjectReference id="DataObjectReference_0925h15" name="Заявка ГУ-12" dataObjectRef="DataObject_0c2xq1e" />
+    <dataObject id="DataObject_0c2xq1e" />
+    <dataObjectReference id="DataObjectReference_0alad7y" name="Список контейнеров" dataObjectRef="DataObject_0tjmkkt" />
+    <dataObject id="DataObject_0tjmkkt" />
+    <dataObjectReference id="DataObjectReference_1yrwkmq" name="План погрузки" dataObjectRef="DataObject_1xfqme0" />
+    <dataObject id="DataObject_1xfqme0" />
+    <userTask id="UserTask_id_1a225f3497d6" name="Внести размещение в АРМ ПКП и ЭТРАН" implementation="##unspecified">
+      <incoming>Flow_id_2b27c09ff6b4</incoming>
+      <outgoing>Flow_id_9449c5741f9b</outgoing>
+    </userTask>
+    <userTask id="UserTask_id_a769030b7cd5" name="Уточнить данные контейнеров" implementation="##unspecified">
+      <incoming>Flow_id_8878f27b3758</incoming>
+      <outgoing>Flow_id_b1a116e77bee</outgoing>
+    </userTask>
+    <userTask id="UserTask_id_7d75dfeee178" name="Осмотреть платформы" implementation="##unspecified">
+      <incoming>Flow_id_c37991e90f8f</incoming>
+      <outgoing>Flow_id_4cc0db14eabf</outgoing>
+      <dataOutputAssociation id="DataOutputAssociation_1mg0nvo">
+        <targetRef>DataObjectReference_0oghxup</targetRef>
+      </dataOutputAssociation>
+    </userTask>
+    <dataObjectReference id="DataObjectReference_0oghxup" name="Ведомость платформ" dataObjectRef="DataObject_0dq10fe" />
+    <dataObject id="DataObject_0dq10fe" />
+  </process>
+  <collaboration id="Collab_id_97faee1588f6" isClosed="false">
+    <participant id="Participant_id_8978c1c6c99f" name="Терминал отправления: формирование плана погрузки контейнерного поезда" processRef="Process_id_5ed6da90f3a7" />
+  </collaboration>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_id_dca7198aa7f4">
+    <bpmndi:BPMNPlane id="BPMNPlane_id_c0214082ccc2" bpmnElement="Collab_id_97faee1588f6">
+      <bpmndi:BPMNShape id="Participant_id_8978c1c6c99f_di" bpmnElement="Participant_id_8978c1c6c99f" isHorizontal="true">
+        <dc:Bounds x="110" y="30" width="2930" height="1090" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_id_b1051a810dd5_di" bpmnElement="Lane_id_b1051a810dd5" isHorizontal="true">
+        <dc:Bounds x="140" y="980" width="2900" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_id_2d4021af5e3f_di" bpmnElement="Lane_id_2d4021af5e3f" isHorizontal="true">
+        <dc:Bounds x="140" y="300" width="2900" height="340" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_id_f642cec8a05e_di" bpmnElement="Lane_id_f642cec8a05e" isHorizontal="true">
+        <dc:Bounds x="140" y="640" width="2900" height="180" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_id_f9ea559f01f1_di" bpmnElement="Lane_id_f9ea559f01f1" isHorizontal="true">
+        <dc:Bounds x="140" y="820" width="2900" height="160" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_id_607abbf26c85_di" bpmnElement="Lane_id_607abbf26c85" isHorizontal="true">
+        <dc:Bounds x="140" y="30" width="2900" height="270" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_id_57ca01cc5a6a_di" bpmnElement="StartEvent_id_57ca01cc5a6a">
+        <dc:Bounds x="196" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ParallelGateway_id_2d61c59fd7be_di" bpmnElement="ParallelGateway_id_2d61c59fd7be">
+        <dc:Bounds x="286" y="175" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_id_784c2aaf7788_di" bpmnElement="ExclusiveGateway_id_784c2aaf7788" isMarkerVisible="true">
+        <dc:Bounds x="399" y="175" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_1589f8beef8d_di" bpmnElement="UserTask_id_1589f8beef8d">
+        <dc:Bounds x="503" y="160" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_2c1af34d7c87_di" bpmnElement="UserTask_id_2c1af34d7c87" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
+        <dc:Bounds x="722" y="380" width="172" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_id_2b7248278b7f_di" bpmnElement="ExclusiveGateway_id_2b7248278b7f" isMarkerVisible="true">
+        <dc:Bounds x="936" y="395" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ParallelGateway_id_0794612d9d20_di" bpmnElement="ParallelGateway_id_0794612d9d20">
+        <dc:Bounds x="1155" y="395" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_e933ec28ede4_di" bpmnElement="UserTask_id_e933ec28ede4">
+        <dc:Bounds x="520" y="862" width="176" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_id_b4dbc380550d_di" bpmnElement="ExclusiveGateway_id_b4dbc380550d" isMarkerVisible="true">
+        <dc:Bounds x="1275" y="395" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_c02765dc83bb_di" bpmnElement="UserTask_id_c02765dc83bb" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
+        <dc:Bounds x="1388" y="380" width="178" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_3aaf3baba76c_di" bpmnElement="UserTask_id_3aaf3baba76c" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
+        <dc:Bounds x="1640" y="380" width="172" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_id_2007af0cabfc_di" bpmnElement="ExclusiveGateway_id_2007af0cabfc" isMarkerVisible="true">
+        <dc:Bounds x="1868" y="395" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_b187ba0e3439_di" bpmnElement="UserTask_id_b187ba0e3439" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
+        <dc:Bounds x="1985" y="380" width="180" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_a02146fac1bf_di" bpmnElement="UserTask_id_a02146fac1bf">
+        <dc:Bounds x="2240" y="380" width="164" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ParallelGateway_id_01a073f38999_di" bpmnElement="ParallelGateway_id_01a073f38999">
+        <dc:Bounds x="2455" y="395" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_5b58f6c84caf_di" bpmnElement="UserTask_id_5b58f6c84caf">
+        <dc:Bounds x="2560" y="158" width="176" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_f8820fdb8aaa_di" bpmnElement="UserTask_id_f8820fdb8aaa">
+        <dc:Bounds x="2572" y="1010" width="150" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ParallelGateway_id_b7a1454285f3_di" bpmnElement="ParallelGateway_id_b7a1454285f3">
+        <dc:Bounds x="2815" y="395" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_id_94338e0a103f_di" bpmnElement="EndEvent_id_94338e0a103f">
+        <dc:Bounds x="2935" y="402" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2917" y="438" width="72" height="36" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_16y02ka_di" bpmnElement="DataObjectReference_16y02ka">
+        <dc:Bounds x="2057" y="520" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2041" y="577" width="69" height="36" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_0gn19vb_di" bpmnElement="DataObjectReference_0gn19vb">
+        <dc:Bounds x="2304" y="145" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2220" y="153" width="64" height="36" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_0925h15_di" bpmnElement="DataObjectReference_0925h15">
+        <dc:Bounds x="565" y="85" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="551" y="63" width="64" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_0alad7y_di" bpmnElement="DataObjectReference_0alad7y">
+        <dc:Bounds x="565" y="415" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="551" y="472" width="64" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_1yrwkmq_di" bpmnElement="DataObjectReference_1yrwkmq">
+        <dc:Bounds x="1585" y="495" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1567" y="552" width="72" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_1a225f3497d6_di" bpmnElement="UserTask_id_1a225f3497d6">
+        <dc:Bounds x="2570" y="700" width="180" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_a769030b7cd5_di" bpmnElement="UserTask_id_a769030b7cd5">
+        <dc:Bounds x="883" y="160" width="156" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_id_7d75dfeee178_di" bpmnElement="UserTask_id_7d75dfeee178">
+        <dc:Bounds x="1106" y="690" width="148" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_0oghxup_di" bpmnElement="DataObjectReference_0oghxup">
+        <dc:Bounds x="1459" y="705" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1450" y="762" width="55" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_id_98c62fe4ee3c_di" bpmnElement="Flow_id_98c62fe4ee3c">
+        <di:waypoint x="232" y="200" />
+        <di:waypoint x="286" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_1718cecb913a_di" bpmnElement="Flow_id_1718cecb913a">
+        <di:waypoint x="336" y="200" />
+        <di:waypoint x="399" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_af73197f3c7c_di" bpmnElement="Flow_id_af73197f3c7c">
+        <di:waypoint x="449" y="200" />
+        <di:waypoint x="503" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_d2d6db5da784_di" bpmnElement="Flow_id_d2d6db5da784">
+        <di:waypoint x="663" y="200" />
+        <di:waypoint x="693" y="200" />
+        <di:waypoint x="693" y="420" />
+        <di:waypoint x="722" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_e585f8c387b3_di" bpmnElement="Flow_id_e585f8c387b3">
+        <di:waypoint x="894" y="420" />
+        <di:waypoint x="936" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_8878f27b3758_di" bpmnElement="Flow_id_8878f27b3758">
+        <di:waypoint x="961" y="395" />
+        <di:waypoint x="961" y="240" />
+        <bpmndi:BPMNLabel id="BPMNLabel_d008b76f-bb7f-4643-b46b-6f418690bf21">
+          <dc:Bounds x="970" y="377" width="20" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_b1a116e77bee_di" bpmnElement="Flow_id_b1a116e77bee">
+        <di:waypoint x="961" y="160" />
+        <di:waypoint x="961" y="48" />
+        <di:waypoint x="424" y="48" />
+        <di:waypoint x="424" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_d8b941db4f27_di" bpmnElement="Flow_id_d8b941db4f27">
+        <di:waypoint x="986" y="420" />
+        <di:waypoint x="1155" y="420" />
+        <bpmndi:BPMNLabel id="BPMNLabel_b7f8ab49-8d20-47c6-95a0-c41e529862c0">
+          <dc:Bounds x="1008" y="401" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_80ec2e89f869_di" bpmnElement="Flow_id_80ec2e89f869">
+        <di:waypoint x="311" y="225" />
+        <di:waypoint x="311" y="902" />
+        <di:waypoint x="520" y="902" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_c37991e90f8f_di" bpmnElement="Flow_id_c37991e90f8f">
+        <di:waypoint x="696" y="902" />
+        <di:waypoint x="1180" y="902" />
+        <di:waypoint x="1180" y="770" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_4cc0db14eabf_di" bpmnElement="Flow_id_4cc0db14eabf">
+        <di:waypoint x="1180" y="690" />
+        <di:waypoint x="1180" y="445" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_87e334de0d8d_di" bpmnElement="Flow_id_87e334de0d8d">
+        <di:waypoint x="1205" y="420" />
+        <di:waypoint x="1275" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_b085047782f1_di" bpmnElement="Flow_id_b085047782f1">
+        <di:waypoint x="1325" y="420" />
+        <di:waypoint x="1388" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_309c12e95d0d_di" bpmnElement="Flow_id_309c12e95d0d">
+        <di:waypoint x="1566" y="420" />
+        <di:waypoint x="1640" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_c55c11e282d7_di" bpmnElement="Flow_id_c55c11e282d7">
+        <di:waypoint x="1812" y="420" />
+        <di:waypoint x="1868" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_3cb49d7ce150_di" bpmnElement="Flow_id_3cb49d7ce150">
+        <di:waypoint x="1893" y="395" />
+        <di:waypoint x="1893" y="338" />
+        <di:waypoint x="1300" y="338" />
+        <di:waypoint x="1300" y="395" />
+        <bpmndi:BPMNLabel id="BPMNLabel_12d40aff-21ec-4f30-9790-d944e66e2c9a">
+          <dc:Bounds x="1902" y="374" width="20" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_9e78479b378d_di" bpmnElement="Flow_id_9e78479b378d">
+        <di:waypoint x="1918" y="420" />
+        <di:waypoint x="1985" y="420" />
+        <bpmndi:BPMNLabel id="BPMNLabel_fddfc77e-8337-4611-8e86-d2dd662f3a90">
+          <dc:Bounds x="1923" y="400" width="13" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_68f794dcc23c_di" bpmnElement="Flow_id_68f794dcc23c">
+        <di:waypoint x="2165" y="420" />
+        <di:waypoint x="2240" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_6bea7733f47f_di" bpmnElement="Flow_id_6bea7733f47f">
+        <di:waypoint x="2404" y="420" />
+        <di:waypoint x="2455" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_27b136e00a41_di" bpmnElement="Flow_id_27b136e00a41">
+        <di:waypoint x="2480" y="395" />
+        <di:waypoint x="2480" y="198" />
+        <di:waypoint x="2560" y="198" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_2b27c09ff6b4_di" bpmnElement="Flow_id_2b27c09ff6b4">
+        <di:waypoint x="2505" y="420" />
+        <di:waypoint x="2530" y="420" />
+        <di:waypoint x="2530" y="740" />
+        <di:waypoint x="2570" y="740" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_2e71c79a067f_di" bpmnElement="Flow_id_2e71c79a067f">
+        <di:waypoint x="2480" y="445" />
+        <di:waypoint x="2480" y="1050" />
+        <di:waypoint x="2572" y="1050" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_22e8a872ef40_di" bpmnElement="Flow_id_22e8a872ef40">
+        <di:waypoint x="2736" y="198" />
+        <di:waypoint x="2840" y="198" />
+        <di:waypoint x="2840" y="395" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_9449c5741f9b_di" bpmnElement="Flow_id_9449c5741f9b">
+        <di:waypoint x="2750" y="740" />
+        <di:waypoint x="2780" y="740" />
+        <di:waypoint x="2780" y="420" />
+        <di:waypoint x="2815" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_ae08245bc5dd_di" bpmnElement="Flow_id_ae08245bc5dd">
+        <di:waypoint x="2722" y="1050" />
+        <di:waypoint x="2840" y="1050" />
+        <di:waypoint x="2840" y="445" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_id_3efc9d513051_di" bpmnElement="Flow_id_3efc9d513051">
+        <di:waypoint x="2865" y="420" />
+        <di:waypoint x="2935" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0mnbd5f_di" bpmnElement="DataInputAssociation_0mnbd5f">
+        <di:waypoint x="583" y="135" />
+        <di:waypoint x="583" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0gptw98_di" bpmnElement="DataOutputAssociation_0gptw98">
+        <di:waypoint x="583" y="240" />
+        <di:waypoint x="583" y="415" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0owgagc_di" bpmnElement="DataInputAssociation_0owgagc">
+        <di:waypoint x="601" y="440" />
+        <di:waypoint x="720" y="440" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_1cu6obd_di" bpmnElement="DataInputAssociation_1cu6obd">
+        <di:waypoint x="1477" y="705" />
+        <di:waypoint x="1477" y="460" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0s7m7zv_di" bpmnElement="DataOutputAssociation_0s7m7zv">
+        <di:waypoint x="1527" y="460" />
+        <di:waypoint x="1585" y="506" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0zc1tbn_di" bpmnElement="DataInputAssociation_0zc1tbn">
+        <di:waypoint x="1621" y="505" />
+        <di:waypoint x="1677" y="460" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1ojhbj5_di" bpmnElement="DataOutputAssociation_1ojhbj5">
+        <di:waypoint x="2075" y="460" />
+        <di:waypoint x="2075" y="520" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0rz5k2e_di" bpmnElement="DataOutputAssociation_0rz5k2e">
+        <di:waypoint x="2322" y="380" />
+        <di:waypoint x="2322" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0fo8wav_di" bpmnElement="DataInputAssociation_0fo8wav">
+        <di:waypoint x="2340" y="170" />
+        <di:waypoint x="2560" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1mg0nvo_di" bpmnElement="DataOutputAssociation_1mg0nvo">
+        <di:waypoint x="1254" y="730" />
+        <di:waypoint x="1459" y="730" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
