@@ -1,0 +1,277 @@
+{
+  "organizers": [
+    {
+      "id": 1,
+      "inn": "6658000000",
+      "name": "ООО «Уралконтейнер»"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "organizer_id": 1,
+      "number": "0041578923",
+      "approval_date": "2026-10-12"
+    }
+  ],
+  "trains": [
+    {
+      "number": "2041",
+      "request_id": 1,
+      "departure_date": "2026-10-15",
+      "max_length_m": 1050
+    }
+  ],
+  "container_types": [
+    {
+      "code": "1CC",
+      "length_ft": 20,
+      "max_gross_mass": 30.48
+    },
+    {
+      "code": "1AA",
+      "length_ft": 40,
+      "max_gross_mass": 30.48
+    },
+    {
+      "code": "1AAA",
+      "length_ft": 40,
+      "max_gross_mass": 30.48
+    }
+  ],
+  "containers": [
+    {
+      "number": "VLGU1000010",
+      "request_id": 1,
+      "type_code": "1AA",
+      "gross_mass": 28.4,
+      "dest_station": "Екатеринбург-Товарный"
+    },
+    {
+      "number": "VLGU1000025",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 26.8,
+      "dest_station": "Екатеринбург-Товарный"
+    },
+    {
+      "number": "VLGU1000030",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 21.5,
+      "dest_station": "Екатеринбург-Товарный"
+    },
+    {
+      "number": "VLGU1000046",
+      "request_id": 1,
+      "type_code": "1AAA",
+      "gross_mass": 18.2,
+      "dest_station": "Екатеринбург-Товарный"
+    },
+    {
+      "number": "VLGU1000051",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 12.4,
+      "dest_station": "Екатеринбург-Товарный"
+    },
+    {
+      "number": "SBRU2000017",
+      "request_id": 1,
+      "type_code": "1AA",
+      "gross_mass": 30.1,
+      "dest_station": "Новосибирск-Восточный"
+    },
+    {
+      "number": "SBRU2000022",
+      "request_id": 1,
+      "type_code": "1AA",
+      "gross_mass": 24.9,
+      "dest_station": "Новосибирск-Восточный"
+    },
+    {
+      "number": "SBRU2000038",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 27.5,
+      "dest_station": "Новосибирск-Восточный"
+    },
+    {
+      "number": "SBRU2000043",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 19.0,
+      "dest_station": "Новосибирск-Восточный"
+    },
+    {
+      "number": "SBRU2000059",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 16.3,
+      "dest_station": "Новосибирск-Восточный"
+    },
+    {
+      "number": "SBRU2000064",
+      "request_id": 1,
+      "type_code": "1AAA",
+      "gross_mass": 14.7,
+      "dest_station": "Новосибирск-Восточный"
+    },
+    {
+      "number": "KZNU3000014",
+      "request_id": 1,
+      "type_code": "1AA",
+      "gross_mass": 29.6,
+      "dest_station": "Красноярск-Восточный"
+    },
+    {
+      "number": "KZNU3000020",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 25.2,
+      "dest_station": "Красноярск-Восточный"
+    },
+    {
+      "number": "KZNU3000035",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 22.7,
+      "dest_station": "Красноярск-Восточный"
+    },
+    {
+      "number": "KZNU3000040",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 20.4,
+      "dest_station": "Красноярск-Восточный"
+    },
+    {
+      "number": "KZNU3000056",
+      "request_id": 1,
+      "type_code": "1AAA",
+      "gross_mass": 26.0,
+      "dest_station": "Красноярск-Восточный"
+    },
+    {
+      "number": "KZNU3000061",
+      "request_id": 1,
+      "type_code": "1CC",
+      "gross_mass": 10.8,
+      "dest_station": "Красноярск-Восточный"
+    },
+    {
+      "number": "KZNU3000077",
+      "request_id": 1,
+      "type_code": "1AA",
+      "gross_mass": 21.9,
+      "dest_station": "Красноярск-Восточный"
+    }
+  ],
+  "platform_models": [
+    {
+      "code": "ФП-40",
+      "length_m": 13.6,
+      "length_ft": 40,
+      "load_capacity": 60,
+      "max_teu": 2
+    },
+    {
+      "code": "ФП-60",
+      "length_m": 19.6,
+      "length_ft": 60,
+      "load_capacity": 69,
+      "max_teu": 3
+    },
+    {
+      "code": "ФП-80",
+      "length_m": 25.6,
+      "length_ft": 80,
+      "load_capacity": 72,
+      "max_teu": 4
+    }
+  ],
+  "platforms": [
+    {
+      "number": "59001234",
+      "model_code": "ФП-80",
+      "stops_layout": "40+20+20"
+    },
+    {
+      "number": "59001242",
+      "model_code": "ФП-80",
+      "stops_layout": "40+40"
+    },
+    {
+      "number": "59001259",
+      "model_code": "ФП-80",
+      "stops_layout": "40+40"
+    },
+    {
+      "number": "59002018",
+      "model_code": "ФП-60",
+      "stops_layout": "20+20+20"
+    },
+    {
+      "number": "59002026",
+      "model_code": "ФП-60",
+      "stops_layout": "20+20+20"
+    },
+    {
+      "number": "59002034",
+      "model_code": "ФП-60",
+      "stops_layout": "40+20"
+    },
+    {
+      "number": "59003016",
+      "model_code": "ФП-40",
+      "stops_layout": "40"
+    },
+    {
+      "number": "59003024",
+      "model_code": "ФП-40",
+      "stops_layout": "40"
+    }
+  ],
+  "train_platforms": [
+    {
+      "train_number": "2041",
+      "platform_number": "59001234",
+      "order_no": 1
+    },
+    {
+      "train_number": "2041",
+      "platform_number": "59001242",
+      "order_no": 2
+    },
+    {
+      "train_number": "2041",
+      "platform_number": "59001259",
+      "order_no": 3
+    },
+    {
+      "train_number": "2041",
+      "platform_number": "59002018",
+      "order_no": 4
+    },
+    {
+      "train_number": "2041",
+      "platform_number": "59002026",
+      "order_no": 5
+    },
+    {
+      "train_number": "2041",
+      "platform_number": "59002034",
+      "order_no": 6
+    },
+    {
+      "train_number": "2041",
+      "platform_number": "59003016",
+      "order_no": 7
+    },
+    {
+      "train_number": "2041",
+      "platform_number": "59003024",
+      "order_no": 8
+    }
+  ]
+}
