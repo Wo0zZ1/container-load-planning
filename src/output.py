@@ -12,7 +12,7 @@ def describe(container: dict) -> str:
 
 
 def print_problems(problems: list[str]) -> None:
-    print("Данные контейнеров неполные, план не сформирован:")
+    print("В данных контейнеров есть ошибки, план не сформирован:")
     for problem in problems:
         print(f"  {problem}")
 

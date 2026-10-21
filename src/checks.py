@@ -1,8 +1,12 @@
 def check_containers(containers: list[dict],
                      types: dict[str, dict]) -> list[str]:
     problems = []
+    numbers = set()
     for container in containers:
         number = container["number"]
+        if number in numbers:
+            problems.append(f"{number}: контейнер указан в списке повторно")
+        numbers.add(number)
         type_code = container["type_code"]
         container_type = types.get(type_code)
         mass = container.get("gross_mass")
