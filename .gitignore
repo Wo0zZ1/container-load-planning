@@ -9,3 +9,5 @@ bin/
 
 .vscode/
 Thumbs.db
+
+build/
