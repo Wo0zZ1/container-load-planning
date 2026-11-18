@@ -1,3 +1,5 @@
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
@@ -53,7 +55,20 @@ public final class PlannerTest {
             try { Json.parse(json); } catch (IllegalArgumentException exception) { failed = true; }
             check(failed, "Некорректный JSON отклонен: " + json);
         }
-        Dataset data = Dataset.read(java.nio.file.Path.of(args[0]));
+        Path input = Path.of(args[0]);
+        String sample = Files.readString(input);
+        Path invalidInput = Files.createTempFile("load-planning-", ".json");
+        try {
+            for (String id : List.of("1.5", "2147483648", "1.0000000000000001")) {
+                Files.writeString(invalidInput, sample.replaceFirst("\"request_id\": 1,", "\"request_id\": " + id + ","));
+                String error = null;
+                try { Dataset.read(invalidInput); } catch (IllegalArgumentException exception) { error = exception.getMessage(); }
+                check(error != null && error.contains("request_id"), "Некорректный request_id отклонен: " + id);
+            }
+        } finally {
+            Files.deleteIfExists(invalidInput);
+        }
+        Dataset data = Dataset.read(input);
         LoadPlan example = planner.plan(data.train("2041"), data.containersFor(data.train("2041")));
         check(example.placements().size() == 17 && example.rejected().get(0).number().equals("SBRU2000064"),
             "Контрольный пример: 17 размещений, один невошедший");

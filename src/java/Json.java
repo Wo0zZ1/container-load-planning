@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -66,8 +67,8 @@ public final class Json {
         while (position < text.length() && "-+0123456789.eE".indexOf(text.charAt(position)) >= 0) position++;
         String number = text.substring(start, position);
         if (!number.matches("-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?")) throw error();
-        double result = Double.parseDouble(number);
-        if (!Double.isFinite(result)) throw error();
+        BigDecimal result = new BigDecimal(number);
+        if (!Double.isFinite(result.doubleValue())) throw error();
         return result;
     }
     private String string() {
