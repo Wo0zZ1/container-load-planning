@@ -186,19 +186,19 @@
           <mxGeometry x="0" y="74" width="440" height="37" as="geometry" />
         </mxCell>
         <mxCell id="PlatformLoad" value="" style="rounded=0;html=1;container=1;collapsible=0;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="1720" y="1725" width="440" height="325" as="geometry" />
+          <mxGeometry x="1720" y="1725" width="440" height="371" as="geometry" />
         </mxCell>
         <mxCell id="PlatformLoad-title" value="PlatformLoad" style="html=1;align=center;fontStyle=1;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="PlatformLoad" vertex="1">
           <mxGeometry x="0" y="0" width="440" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="PlatformLoad-attrs" value="- platform: Platform&lt;br&gt;- containers: List&amp;lt;Container&amp;gt;&lt;br&gt;- usedFt: int&lt;br&gt;- mass: double" style="html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#ffffff;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=16;" parent="PlatformLoad" vertex="1">
-          <mxGeometry x="0" y="44" width="440" height="106" as="geometry" />
+        <mxCell id="PlatformLoad-attrs" value="- platform: Platform&lt;br&gt;- containers: List&amp;lt;Container&amp;gt;&lt;br&gt;- frozen: boolean&lt;br&gt;- usedFt: int&lt;br&gt;- mass: double" style="html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#ffffff;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=16;" parent="PlatformLoad" vertex="1">
+          <mxGeometry x="0" y="44" width="440" height="129" as="geometry" />
         </mxCell>
-        <mxCell id="PlatformLoad-methods" value="+ platform(): Platform&lt;br&gt;+ usedFt(): int&lt;br&gt;+ mass(): double&lt;br&gt;+ containers(): List&amp;lt;Container&amp;gt;&lt;br&gt;+ tryAdd(Container, List&amp;lt;LoadRule&amp;gt;): boolean&lt;br&gt;+ teu(): double&lt;br&gt;+ requiredStops(): String" style="html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#ffffff;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=16;" parent="PlatformLoad" vertex="1">
-          <mxGeometry x="0" y="150" width="440" height="175" as="geometry" />
+        <mxCell id="PlatformLoad-methods" value="+ snapshot(): PlatformLoad&lt;br&gt;+ platform(): Platform&lt;br&gt;+ usedFt(): int&lt;br&gt;+ mass(): double&lt;br&gt;+ containers(): List&amp;lt;Container&amp;gt;&lt;br&gt;+ tryAdd(Container, List&amp;lt;LoadRule&amp;gt;): boolean&lt;br&gt;+ teu(): double&lt;br&gt;+ requiredStops(): String" style="html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#ffffff;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=16;" parent="PlatformLoad" vertex="1">
+          <mxGeometry x="0" y="173" width="440" height="198" as="geometry" />
         </mxCell>
         <mxCell id="Json" value="" style="rounded=0;html=1;container=1;collapsible=0;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="40" y="2200" width="440" height="302" as="geometry" />
+          <mxGeometry x="40" y="2246" width="440" height="302" as="geometry" />
         </mxCell>
         <mxCell id="Json-title" value="Json" style="html=1;align=center;fontStyle=1;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="Json" vertex="1">
           <mxGeometry x="0" y="0" width="440" height="44" as="geometry" />
@@ -210,7 +210,7 @@
           <mxGeometry x="0" y="104" width="440" height="198" as="geometry" />
         </mxCell>
         <mxCell id="Dataset" value="" style="rounded=0;html=1;container=1;collapsible=0;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="600" y="2200" width="440" height="279" as="geometry" />
+          <mxGeometry x="600" y="2246" width="440" height="302" as="geometry" />
         </mxCell>
         <mxCell id="Dataset-title" value="Dataset" style="html=1;align=center;fontStyle=1;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="Dataset" vertex="1">
           <mxGeometry x="0" y="0" width="440" height="44" as="geometry" />
@@ -218,11 +218,11 @@
         <mxCell id="Dataset-attrs" value="- trains: List&amp;lt;Train&amp;gt;&lt;br&gt;- containers: List&amp;lt;Container&amp;gt;" style="html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#ffffff;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=16;" parent="Dataset" vertex="1">
           <mxGeometry x="0" y="44" width="440" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Dataset-methods" value="+ train(String): Train&lt;br&gt;+ containersFor(Train): List&amp;lt;Container&amp;gt;&lt;br&gt;&lt;u&gt;- rows(Map&amp;lt;?, ?&amp;gt;, String): List&amp;lt;Map&amp;lt;?, ?&amp;gt;&amp;gt;&lt;/u&gt;&lt;br&gt;&lt;u&gt;- str(Map&amp;lt;?, ?&amp;gt;, String): String&lt;/u&gt;&lt;br&gt;&lt;u&gt;- num(Map&amp;lt;?, ?&amp;gt;, String): double&lt;/u&gt;&lt;br&gt;&lt;u&gt;- reference(Map&amp;lt;?, T&amp;gt;, Object): &amp;lt;T&amp;gt; T&lt;/u&gt;&lt;br&gt;&lt;u&gt;+ read(Path): Dataset&lt;/u&gt;" style="html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#ffffff;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=16;" parent="Dataset" vertex="1">
-          <mxGeometry x="0" y="104" width="440" height="175" as="geometry" />
+        <mxCell id="Dataset-methods" value="+ train(String): Train&lt;br&gt;+ containersFor(Train): List&amp;lt;Container&amp;gt;&lt;br&gt;&lt;u&gt;- rows(Map&amp;lt;?, ?&amp;gt;, String): List&amp;lt;Map&amp;lt;?, ?&amp;gt;&amp;gt;&lt;/u&gt;&lt;br&gt;&lt;u&gt;- str(Map&amp;lt;?, ?&amp;gt;, String): String&lt;/u&gt;&lt;br&gt;&lt;u&gt;- num(Map&amp;lt;?, ?&amp;gt;, String): double&lt;/u&gt;&lt;br&gt;&lt;u&gt;- integer(Map&amp;lt;?, ?&amp;gt;, String): int&lt;/u&gt;&lt;br&gt;&lt;u&gt;- reference(Map&amp;lt;?, T&amp;gt;, Object): &amp;lt;T&amp;gt; T&lt;/u&gt;&lt;br&gt;&lt;u&gt;+ read(Path): Dataset&lt;/u&gt;" style="html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#ffffff;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=16;" parent="Dataset" vertex="1">
+          <mxGeometry x="0" y="104" width="440" height="198" as="geometry" />
         </mxCell>
         <mxCell id="Main" value="" style="rounded=0;html=1;container=1;collapsible=0;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="1160" y="2200" width="440" height="180" as="geometry" />
+          <mxGeometry x="1160" y="2246" width="440" height="180" as="geometry" />
         </mxCell>
         <mxCell id="Main-title" value="Main" style="html=1;align=center;fontStyle=1;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="Main" vertex="1">
           <mxGeometry x="0" y="0" width="440" height="44" as="geometry" />
@@ -234,7 +234,7 @@
           <mxGeometry x="0" y="74" width="440" height="106" as="geometry" />
         </mxCell>
         <mxCell id="Planner" value="" style="rounded=0;html=1;container=1;collapsible=0;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="1720" y="2200" width="440" height="141" as="geometry" />
+          <mxGeometry x="1720" y="2246" width="440" height="141" as="geometry" />
         </mxCell>
         <mxCell id="Planner-title" value="Planner" style="html=1;align=center;fontStyle=1;fillColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="Planner" vertex="1">
           <mxGeometry x="0" y="0" width="440" height="44" as="geometry" />
@@ -246,7 +246,7 @@
           <mxGeometry x="0" y="81" width="440" height="60" as="geometry" />
         </mxCell>
         <mxCell id="relation0" source="Request" target="Organizer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="540.0" y="198.0" /><mxPoint x="540.0" y="175.0" /></Array><Array as="points"><mxPoint x="540.0" y="198.0" /><mxPoint x="540.0" y="175.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="540.0" y="198.0" /><mxPoint x="540.0" y="175.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation0a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation0" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -259,7 +259,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="relation1" source="Train" target="Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100.0" y="221.0" /><mxPoint x="1100.0" y="198.0" /></Array><Array as="points"><mxPoint x="1100.0" y="221.0" /><mxPoint x="1100.0" y="198.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100.0" y="221.0" /><mxPoint x="1100.0" y="198.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation1a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation1" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -272,7 +272,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="relation2" source="Train" target="TrainPlatform" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;startArrow=diamondThin;startFill=1;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1660.0" y="221.0" /><mxPoint x="1660.0" y="175.0" /></Array><Array as="points"><mxPoint x="1660.0" y="221.0" /><mxPoint x="1660.0" y="175.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1660.0" y="221.0" /><mxPoint x="1660.0" y="175.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation2a" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation2" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -285,7 +285,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="relation3" source="TrainPlatform" target="Platform" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1940.0" y="401.0" /><mxPoint x="1380.0" y="401.0" /></Array><Array as="points"><mxPoint x="1940.0" y="401.0" /><mxPoint x="1380.0" y="401.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1940.0" y="401.0" /><mxPoint x="1380.0" y="401.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation3a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation3" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -298,7 +298,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="relation4" source="Container" target="Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="820.0" y="424.0" /><mxPoint x="820.0" y="424.0" /></Array><Array as="points"><mxPoint x="820.0" y="424.0" /><mxPoint x="820.0" y="424.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="820.0" y="424.0" /><mxPoint x="820.0" y="424.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation4a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation4" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -311,7 +311,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="relation5" source="Container" target="ContainerType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="540.0" y="719.0" /><mxPoint x="540.0" y="627.0" /></Array><Array as="points"><mxPoint x="540.0" y="719.0" /><mxPoint x="540.0" y="627.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="540.0" y="719.0" /><mxPoint x="540.0" y="627.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation5a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation5" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -324,7 +324,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="relation6" source="Platform" target="PlatformModel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1660.0" y="638.5" /><mxPoint x="1660.0" y="673.0" /></Array><Array as="points"><mxPoint x="1660.0" y="638.5" /><mxPoint x="1660.0" y="673.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1660.0" y="638.5" /><mxPoint x="1660.0" y="673.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation6a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation6" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -337,13 +337,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="relation7" source="Container20" target="Container" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=block;endFill=0;endSize=16;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="260.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array><Array as="points"><mxPoint x="260.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="260.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation8" source="Container40" target="Container" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=block;endFill=0;endSize=16;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="820.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array><Array as="points"><mxPoint x="820.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="820.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation9" source="Placement" target="Container" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1380.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array><Array as="points"><mxPoint x="1380.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array></mxGeometry>
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1380.0" y="991.0" /><mxPoint x="820.0" y="991.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation9a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation9" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -355,21 +355,21 @@
             <mxPoint x="0" y="0" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="relation10" source="LoadPlan" target="Placement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;startArrow=diamondThin;startFill=1;endArrow=none;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1660.0" y="1320.5" /><mxPoint x="1660.0" y="1194.0" /></Array><Array as="points"><mxPoint x="1660.0" y="1320.5" /><mxPoint x="1660.0" y="1194.0" /></Array></mxGeometry>
+        <mxCell id="relation10" source="Placement" target="Platform" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=0.65;exitY=0;entryX=0.65;entryY=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points" /></mxGeometry>
         </mxCell>
-        <mxCell id="relation10a" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation10" vertex="1" connectable="0">
+        <mxCell id="relation10a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation10" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
             <mxPoint x="0" y="0" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="relation10b" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation10" vertex="1" connectable="0">
+        <mxCell id="relation10b" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation10" vertex="1" connectable="0">
           <mxGeometry x="0.85" y="-18" relative="1" as="geometry">
             <mxPoint x="0" y="0" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="relation11" source="LoadPlan" target="PlatformLoad" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;startArrow=diamondThin;startFill=1;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1940.0" y="1650.0" /><mxPoint x="1940.0" y="1650.0" /></Array><Array as="points"><mxPoint x="1940.0" y="1650.0" /><mxPoint x="1940.0" y="1650.0" /></Array></mxGeometry>
+        <mxCell id="relation11" source="LoadPlan" target="Placement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;startArrow=diamondThin;startFill=1;endArrow=none;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1660.0" y="1320.5" /><mxPoint x="1660.0" y="1194.0" /></Array></mxGeometry>
         </mxCell>
         <mxCell id="relation11a" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation11" vertex="1" connectable="0">
           <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
@@ -381,20 +381,59 @@
             <mxPoint x="0" y="0" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="relation12" source="LengthRule" target="LoadRule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=block;endFill=0;endSize=16;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="540.0" y="1780.5" /><mxPoint x="540.0" y="1780.5" /></Array><Array as="points"><mxPoint x="540.0" y="1780.5" /><mxPoint x="540.0" y="1780.5" /></Array></mxGeometry>
+        <mxCell id="relation12" source="LoadPlan" target="PlatformLoad" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;startArrow=diamondThin;startFill=1;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1940.0" y="1650.0" /><mxPoint x="1940.0" y="1650.0" /></Array></mxGeometry>
         </mxCell>
-        <mxCell id="relation13" source="MassRule" target="LoadRule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=block;endFill=0;endSize=16;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100.0" y="1780.5" /><mxPoint x="1100.0" y="1780.5" /></Array><Array as="points"><mxPoint x="1100.0" y="1780.5" /><mxPoint x="1100.0" y="1780.5" /></Array></mxGeometry>
+        <mxCell id="relation12a" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation12" vertex="1" connectable="0">
+          <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
+            <mxPoint x="0" y="0" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="relation14" source="Planner" target="PlatformLoad" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1940.0" y="2125.0" /><mxPoint x="1940.0" y="2125.0" /></Array><Array as="points"><mxPoint x="1940.0" y="2125.0" /><mxPoint x="1940.0" y="2125.0" /></Array></mxGeometry>
+        <mxCell id="relation12b" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation12" vertex="1" connectable="0">
+          <mxGeometry x="0.85" y="-18" relative="1" as="geometry">
+            <mxPoint x="0" y="0" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="relation15" source="Main" target="Dataset" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100.0" y="2290.0" /><mxPoint x="1100.0" y="2339.5" /></Array><Array as="points"><mxPoint x="1100.0" y="2290.0" /><mxPoint x="1100.0" y="2339.5" /></Array></mxGeometry>
+        <mxCell id="relation13" source="LoadPlan" target="Train" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=1;exitY=0.25;entryX=0.75;entryY=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="2215" y="1193.25" /><mxPoint x="2215" y="412" /><mxPoint x="1490.0" y="412" /></Array></mxGeometry>
         </mxCell>
-        <mxCell id="relation16" source="Main" target="Planner" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1660.0" y="2290.0" /><mxPoint x="1660.0" y="2270.5" /></Array><Array as="points"><mxPoint x="1660.0" y="2290.0" /><mxPoint x="1660.0" y="2270.5" /></Array></mxGeometry>
+        <mxCell id="relation13a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation13" vertex="1" connectable="0">
+          <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
+            <mxPoint x="0" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="relation13b" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation13" vertex="1" connectable="0">
+          <mxGeometry x="0.85" y="-18" relative="1" as="geometry">
+            <mxPoint x="0" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="relation14" source="LengthRule" target="LoadRule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=block;endFill=0;endSize=16;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="540.0" y="1780.5" /><mxPoint x="540.0" y="1780.5" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="relation15" source="MassRule" target="LoadRule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=block;endFill=0;endSize=16;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100.0" y="1780.5" /><mxPoint x="1100.0" y="1780.5" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="relation16" source="Planner" target="LoadRule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;exitX=0;exitY=0.4;entryX=0.5;entryY=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1680" y="2302.4" /><mxPoint x="1680" y="2191" /><mxPoint x="820.0" y="2191" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="relation16a" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation16" vertex="1" connectable="0">
+          <mxGeometry x="-0.85" y="-18" relative="1" as="geometry">
+            <mxPoint x="0" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="relation16b" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;" parent="relation16" vertex="1" connectable="0">
+          <mxGeometry x="0.85" y="-18" relative="1" as="geometry">
+            <mxPoint x="0" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="relation17" source="Planner" target="PlatformLoad" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1940.0" y="2171.0" /><mxPoint x="1940.0" y="2171.0" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="relation18" source="Main" target="Dataset" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100.0" y="2336.0" /><mxPoint x="1100.0" y="2397.0" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="relation19" source="Main" target="Planner" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=#ffffff;fontFamily=Times New Roman;fontSize=16;endArrow=open;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1660.0" y="2336.0" /><mxPoint x="1660.0" y="2316.5" /></Array></mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
