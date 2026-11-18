@@ -53,6 +53,12 @@ public final class PlannerTest {
         check(plan.placements().size() == 1 && plan.rejected().size() == 1, "Ограничение массы формирует список невошедших");
         check(plan.loadedTeu() == 1.5 && plan.fillPercent() == 75 && !plan.normMet(), "Невыполнение нормы рассчитывается");
         check(Math.abs(plan.lackTeu() - 0.34) < 1e-9, "Дефицит ДФЭ равен 0,34");
+        PlatformLoad draft = new PlatformLoad(platform);
+        draft.tryAdd(light, rules);
+        LoadPlan snapshot = new LoadPlan(train, List.of(draft), List.of());
+        check(!snapshot.loads().get(0).tryAdd(light, rules), "Загрузка готового плана не принимает новые контейнеры");
+        check(draft.tryAdd(light, rules) && snapshot.loadedTeu() == 1 && snapshot.placements().size() == 1,
+            "Изменение черновика не меняет ДФЭ и размещения готового плана");
         Object parsed = Json.parse("{\"a\":[true,null,-1.25e2,\"\\u0410\\n\\\"\"]}");
         check(parsed instanceof Map && Json.parse(Json.stringify(parsed)).equals(parsed), "JSON с Unicode и escapes проходит обратное преобразование");
         for (String json : List.of("{", "[1,]", "01", "true false", "\"line\nend\"")) {

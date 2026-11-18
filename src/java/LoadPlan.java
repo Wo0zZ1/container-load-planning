@@ -17,12 +17,12 @@ public final class LoadPlan {
 
     public LoadPlan(Train train, List<PlatformLoad> loads, List<Container> rejected) {
         this.train = train;
-        this.loads = List.copyOf(loads);
+        this.loads = loads.stream().map(PlatformLoad::snapshot).toList();
         this.rejected = List.copyOf(rejected);
         createdAt = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
         id = train.number() + "-" + createdAt.format(DateTimeFormatter.ofPattern("yyyyMMddHHmm"));
         List<Placement> positions = new ArrayList<>();
-        for (PlatformLoad load : loads) {
+        for (PlatformLoad load : this.loads) {
             int slot = 1;
             for (Container container : load.containers())
                 positions.add(new Placement(id, container, load.platform(), slot++));
