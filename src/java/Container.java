@@ -36,6 +36,8 @@ public abstract class Container {
             problems.add(number + ": не указана станция назначения");
         if (grossMass == null || grossMass == 0)
             problems.add(number + ": не указана масса брутто");
+        else if (grossMass < 0)
+            problems.add(number + ": масса брутто должна быть больше нуля");
         else if (type != null && grossMass > type.maxGrossMass())
             problems.add(number + ": масса брутто " + grossMass +
                 " т больше допустимой для типоразмера " + typeCode);

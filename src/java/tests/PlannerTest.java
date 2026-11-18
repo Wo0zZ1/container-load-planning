@@ -41,6 +41,11 @@ public final class PlannerTest {
         check(planner.validate(List.of(light, light)).size() == 1, "Повтор номера обнаружен");
         Container invalid = new Container20("D", request, null, "missing", null, "");
         check(planner.validate(List.of(invalid)).size() == 3, "Неизвестный тип, масса и станция проверяются вместе");
+        for (double mass : List.of(-28.4, 0.0)) {
+            Container badMass = new Container20("Z", request, shortType, "1CC", mass, "S");
+            check(planner.validate(List.of(badMass)).stream().anyMatch(problem -> problem.contains("масса брутто")),
+                "Неположительная масса отклонена: " + mass);
+        }
         check(planner.validate(List.of(new Container20("E", request, shortType, "1CC", 31.0, "S"))).size() == 1,
             "Превышение массы типоразмера обнаружено");
         Train train = new Train("T", request, "2026-11-16", 100, List.of(new TrainPlatform("T", platform, 1)));
